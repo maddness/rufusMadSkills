@@ -10,4 +10,15 @@ Enums provide many advantages:
 Instead of using one method with `switch` over enum entries, 
 use abstract method and implement in for every entry (#code).
 
-If you overriding `toString()` implementation, also add utility `fromString` method (#code) 
+If you overriding `toString()` implementation, also add utility `fromString` method (#code).
+ 
+Also remember about strategy pattern - enum with strategy logic inside main enum.
+
+## Item 31: Use instance fields instead of ordinals
+
+Never rely on `ordinal()` - the position of enum constant may change. 
+Use instance field for that purpose.
+
+## Item 32: Use EnumSet instead of bit fields
+
+Bit fields are mostly obsolete these days, use `EnumSet.of()` to represent Set<EnumType>
