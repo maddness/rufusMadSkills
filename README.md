@@ -10,7 +10,7 @@ Enums provide many advantages:
 Instead of using one method with `switch` over enum entries, 
 use abstract method and implement in for every entry (#code).
 
-If you overriding `toString()` implementation, also add utility `fromString` method (#code).
+If you overriding `toString()` implementation, also add utility `fromString(String s)` method (#code).
  
 Also remember about strategy pattern - enum with strategy logic inside main enum.
 
@@ -21,4 +21,13 @@ Use instance field for that purpose.
 
 ## Item 32: Use EnumSet instead of bit fields
 
-Bit fields are mostly obsolete these days, use `EnumSet.of()` to represent Set<EnumType>
+Bit fields are mostly obsolete these days, use `EnumSet.of()` to represent a set of enum values.
+
+## Item 33: Use EnumMap instead of ordinal indexing
+
+Never use ordinals, vol.2. `EnumMap<Enum, Object>` will help you to group objects by enum type.
+
+## Item 34: Enums can implement interfaces
+
+You can not extend an enum, but you can implement an interface. As a client, you may implement your
+own enum realization of a library interface.
